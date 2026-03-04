@@ -1,52 +1,160 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <title>Một số truyện cổ tích Việt Nam</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hãng Xe Nổi Tiếng</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f4f7;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.buttons button {
+    margin: 8px;
+    padding: 12px 18px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #3498db;
+    color: white;
+    transition: 0.3s;
+}
+
+.buttons button:hover {
+    background-color: #2980b9;
+}
+
+.story {
+    margin-top: 25px;
+    text-align: left;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.story img {
+    width: 100%;
+    height: 450px;         /* Cùng chiều cao */
+    object-fit: cover;     /* Cắt ảnh cân đối */
+    object-position: center;
+    border-radius: 12px;
+    margin: 20px 0;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+iframe {
+    width: 100%;
+    height: 350px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+</style>
 </head>
+
 <body>
 
-    <h1>Một số truyện cổ tích Việt Nam</h1>
+<header>
+    <h1>📖 Những Hãng Xe Nổi Tiếng</h1>
+</header>
 
-    <div class="image-box">
-        <img src="https://product.hstatic.net/200000343865/product/truyen-co-tich-viet-nam_tap-1_tb-2025_88649f823af54faa93c807204af14274_master.png"
-             style="width: 300px; height: 200px;"
-             alt="Truyện cổ tích Việt Nam">
-        <br>
-        <button onclick="alert('Chào mừng bạn đến với thế giới truyện cổ tích Việt Nam!')">
-            Click me
-        </button>
+<div class="container">
+
+    <div class="buttons">
+    <button onclick="showStory('bmw')">BMW</button>
+    <button onclick="showStory('lamborghini')">Lamborghini</button>
+    <button onclick="showStory('ferrari')">Ferrari</button>
+    <button onclick="showStory('porsche')">Porsche</button>
+</div>
+
+    <div id="storyContent" class="story">
+        👉 Hãy chọn một hãng xe để xem nội dung.
     </div>
 
-    <ol>
-        <li>
-            <a href="https://vi.wikipedia.org/wiki/S%E1%BB%8D_D%E1%BB%ABa">
-                Truyện Sọ Dừa
-            </a><br>
-            <img src="https://upload.wikimedia.org/wikipedia/vi/4/4f/So_Dua.jpg"
-                 style="width: 200px; height: 150px;"
-                 alt="Truyện Sọ Dừa">
-        </li>
+</div>
 
-        <li>
-            <a href="https://vi.wikipedia.org/wiki/T%E1%BA%A5m_C%C3%A1m">
-                Truyện Tấm Cám
-            </a><br>
-            <img src="https://upload.wikimedia.org/wikipedia/vi/8/8d/Tam_Cam.jpg"
-                 style="width: 200px; height: 150px;"
-                 alt="Truyện Tấm Cám">
-        </li>
+<script>
+const stories = {
 
-        <li>
-            <a href="https://vi.wikipedia.org/wiki/Th%E1%BA%A1ch_Sanh">
-                Truyện Thạch Sanh
-            </a><br>
-            <img src="https://upload.wikimedia.org/wikipedia/vi/3/34/Thach_Sanh.jpg"
-                 style="width: 200px; height: 150px;"
-                 alt="Truyện Thạch Sanh">
-        </li>
-    </ol>
+bmw: `
+<h2>BMW</h2>
+<img src="img/bmw.jpg" alt="BMW">
+<p>
+BMW (Bayerische Motoren Werke) là hãng xe sang đến từ Đức, nổi tiếng với 
+thiết kế thể thao và cảm giác lái mạnh mẽ.
+</p>
+<p><b>Thành lập:</b> 1916 – Đức</p>
+<p><b>Đặc điểm:</b> Hiệu suất cao, công nghệ hiện đại.</p>
+
+<iframe src="img/bmw.mp4"
+allowfullscreen></iframe>
+`,
+
+lamborghini: `
+<h2>Lamborghini</h2>
+<img src="img/lamborghini.jpg" alt="Lamborghini">
+<p>
+Lamborghini là hãng siêu xe nổi tiếng của Ý, được biết đến với thiết kế 
+hầm hố và động cơ cực mạnh.
+</p>
+<p><b>Thành lập:</b> 1963 – Ý</p>
+<p><b>Đặc điểm:</b> Siêu xe tốc độ cao, thiết kế độc đáo.</p>
+
+<iframe src="img/lamborghini.mp4"
+allowfullscreen></iframe>
+`,
+
+ferrari: `
+<h2>Ferrari</h2>
+<img src="img/ferrari.jpg" alt="Ferrari">
+<p>
+Ferrari là biểu tượng của tốc độ và đẳng cấp. 
+Hãng xe Ý này nổi tiếng với màu đỏ đặc trưng và thành tích đua xe F1.
+</p>
+<p><b>Thành lập:</b> 1947 – Ý</p>
+<p><b>Đặc điểm:</b> Thiết kế sang trọng, hiệu suất cao.</p>
+
+<iframe src="img/ferrari.mp4"
+allowfullscreen></iframe>
+`,
+
+porsche: `
+<h2>Porsche</h2>
+<img src="img/porsche.jpg" alt="Porsche">
+<p>
+Porsche là hãng xe thể thao cao cấp của Đức, nổi bật với dòng 911 huyền thoại.
+</p>
+<p><b>Thành lập:</b> 1931 – Đức</p>
+<p><b>Đặc điểm:</b> Thiết kế tinh tế, động cơ mạnh mẽ.</p>
+
+<iframe src="img/porsche.mp4"
+allowfullscreen></iframe>
+`
+};
+
+function showStory(key) {
+    document.getElementById("storyContent").innerHTML = stories[key];
+}
+</script>
 
 </body>
 </html>
-
